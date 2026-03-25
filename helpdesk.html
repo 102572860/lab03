@@ -21,11 +21,11 @@
             <fieldset>
             <legend>Student details</legend>
              <p><label for="student_id" >Student ID </label></p>
-             <input type="text" name="student_id" id="student_id" required="required">
+             <input type="text" name="student_id" id="student_id" required="required" pattern=".{7,10}">
             <p><label for="f_name">Given Name</label>
-            <input type="text" name="f_name" id="f_name" pattern="[a-zA-Z]" required="required">
+            <input type="text" name="f_name" id="f_name" pattern="[a-zA-Z]+" required="required">
             <label for="l_name">Last Name</label>
-            <input type="text" name="l_name" id="l_name" pattern="[a-zA-Z]" required="required"></p>
+            <input type="text" name="l_name" id="l_name" pattern="[a-zA-Z]+" required="required"></p>
             </fieldset>
              <fieldset>
                 <legend>Your Unit</legend>
@@ -49,8 +49,8 @@
              </label>
              </fieldset>
              <fieldset> 
-                <legend>Issue 1w</legend>
-                <label for="html">HTML</label> 
+                <legend>Issue</legend>
+                <label for="HTML">HTML</label> 
 				<input type="checkbox" id="HTML" name="category[]" value="HTML" checked="checked"/>
 			
                 <label for="CSS">CSS</label> 
@@ -64,20 +64,21 @@
 			
                 <label for="SQL">MySQL</label> 
 				<input type="checkbox" id="SQL" name="category[]" value="SQL" />
-			</p>
-                <p><label for="comments">Description of issue</label>
+			
+                <p><label for="comments">Description of issue</label></p>
 			<textarea id="comments" name="comments" rows="4" cols="40" placeholder="Write a description of your problems here:"></textarea>
-		</p>
+		
              </fieldset>
            <fieldset>
             <legend>Preferred Date/Time</legend>
-            <p><label for="date"></label></fieldset>
-            <textarea id="date" name="date" rows="4" cols="40" placeholder="dd/mm/yyyy"></textarea>
+            <p><label for="date">Date</label></p>
+            <textarea id="date" name="date" rows="1" cols="8" placeholder="dd/mm/yyyy" pattern="\d{1,2}\/d{1,2}\/d{2,4}"></textarea>
             
-            <p label for="time">Time</p>
-            <textarea id="time" name="time" rows="4" cols="40" placeholder="00:00"></textarea>
-           </fieldset>
-
+            <p> <label for="time">Time</label></p>
+            <textarea id="time" name="time" rows="1" cols="6" placeholder="00:00" pattern="\d{1,2}\:d{1,2}"></textarea>
+          </fieldset>
+          <button type="submit">Book</button>
+          <button type="reset">Reset</button>
         </form>
     </main>
 </body>
